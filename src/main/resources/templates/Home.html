@@ -1,0 +1,69 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1" >
+<title>Home Page</title>
+<link href="../css/LoginPage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Add Course</h1>
+     <form th:action="@{/addCourse}">   
+        <input type="submit" value="Add Course">
+     </form>
+     <h1>Show Courses</h1>
+     <form th:action="@{/showCourse}">   
+        <input type="submit" value="Courses">
+     </form>
+</body>
+</html>
+ -->
+
+<html lang="en" dir="ltr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+<link rel="stylesheet" href="https://iums.aust.edu/ums-web/resources/css/bootstrap.css">
+<link rel="stylesheet" href="../css/login.css"  type="text/css">
+</head>
+<body>
+<div class="col-sm-12 login-right">
+            <div class="row">
+                <h1 class="login-head-title"></h1>
+                <div class="col-sm-3 col-xs-2 text-center branding"><img src="https://iums.aust.edu/ums-web/resources/images/branding.jpg" title="IUMS" alt="IUMS" height="92"></div>
+                <div class="col-sm-9 col-xs-10">
+                    <blockquote>
+                        <p class="IUMS-title"><span></span></p>
+                        <span class="IUMS-slogan">Ahsanullah University of Science and Technology (AUST)</span>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="signInDiv">
+                <div class="IUMS-sub-head">Course Observation</div>
+                <form th:action="@{/addCourse}">
+                    <div class="contact-wrap">
+                        <div class="form-group">
+                            <input type="submit" value="Add Course">
+                        </div>      
+                        <div class="form-group">
+                            <div id="loginCaptcha" style="display: none;"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdDBocUAAAAAGwKto7l0gLIdciNhQ5pGHA9hX0N&amp;co=aHR0cHM6Ly9pdW1zLmF1c3QuZWR1OjQ0Mw..&amp;hl=en&amp;v=_7Co1fh8iT2hcjvquYJ_3zSP&amp;theme=light&amp;size=normal&amp;cb=t10x5xq155h3" width="304" height="78" role="presentation" name="a-248x71edmuqp" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+                        </div>   
+                    </div>
+                </form>
+                 <form th:action="@{/showCourse}">
+                    <div class="contact-wrap">
+                        <div class="form-group">
+                            <input type="submit" value="Courses">
+                        </div>       
+                          
+                    </div>
+                </form>
+                
+            </div>
+            
+            <br><br>
+
+            
+           
+        </div>
+</body>
+</html>
+

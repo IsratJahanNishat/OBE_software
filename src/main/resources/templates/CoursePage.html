@@ -1,0 +1,157 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1" >
+<title>Course Page</title>
+</head>
+<body>
+	<h1>Add CO1</h1>
+     <form th:action="@{/addCO1}">   
+     
+        <input type="submit" value="Add CO1">
+     </form>
+     <h1>Add CO2</h1>
+     <form th:action="@{/addCO2}">   
+        
+        <input type="submit" value="Add CO2">
+     </form>
+     <h1>Add CO3</h1>
+     <form th:action="@{/addCO3}">   
+        
+        <input type="submit" value="Add CO3">
+     </form>
+     <h1>Add CO4</h1>
+     <form th:action="@{/addCO4}">   
+       
+        <input type="submit" value="Add CO4">
+     </form>
+     <h1>Add CO5</h1>
+     <form th:action="@{/addCO5}">   
+        
+        <input type="submit" value="Add CO5">
+     </form>
+     <h1>Add CO5</h1>
+     <form th:action="@{/pocalculate}">   
+        
+        <input type="submit" value="Calculate PO">
+     </form>
+     
+</body>
+</html>
+
+  -->
+  
+ <!DOCTYPE html >
+<html lang="en" dir="ltr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO-PO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@200&family=Roboto+Slab:wght@300;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color:rgb(198, 226, 216);            
+        }
+        .container{
+            margin-top: 30px;
+            margin-left:20px;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        .button{
+            background-color:rgb(71, 192, 119);
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          border-radius: 5px;
+        }
+        .sec1 p,button{
+            display: inline-block;            
+            padding:10px;
+            
+        }
+        button:hover{
+            background-color: rgb(82, 94, 89);
+            color:antiquewhite;
+        }
+        p{
+            font-size:20px;
+        }
+        img{
+            width:30px;
+            height:auto;
+            margin-right:5px;
+        }
+        header{            
+            background-color:rgb(1, 66, 1);        
+            color:white;
+            width:100%;
+        }
+        h1{
+            padding:2px;
+            margin:auto;
+            font-size:25px;
+        }
+        h2{
+            color:rgb(59, 54, 54);
+        }
+        header img, h1{
+            display:inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../css/AUST-logo.png"/>		
+        <h1>AUST-OBE</h1>
+    </header>
+    <div class="container">
+        <h2>Upload The Course CO's</h2>
+        <section class="sec1">
+            <strong><p>Add CO1</p></strong>
+            <form th:action="@{/addCO1}">    
+        		<input type="submit" class="button" value="Upload">
+     		</form>
+        </section>
+        <section class="sec1">
+            <strong><p>Add CO2</p></strong>
+           	<form th:action="@{/addCO2}">    
+        		<input type="submit" class="button" value="Upload">
+     		</form>
+        </section>
+        <section class="sec1">
+            <strong><p>Add CO3</p></strong>
+            <form th:action="@{/addCO3}">    
+        		<input type="submit" class="button" value="Upload">
+     		</form>
+        </section>
+        <section class="sec1">
+            <strong><p>Add CO4</p></strong>
+            <form th:action="@{/addCO4}">    
+        		<input type="submit" class="button" value="Upload">
+     		</form>
+        </section>
+        <section class="sec1">
+            <strong><p>Add CO5</p></strong>
+            <form th:action="@{/addCO5}">    
+        		<input type="submit" class="button" value="Upload">
+     		</form>
+        </section>
+        <br></br>
+        <section class="sec1">
+        	<form th:action="@{/pocalculate}">   
+        		<input type="submit" class="button" value="Calculate PO">
+     		</form>
+     	</section>
+    </div>
+</body>
+</html>

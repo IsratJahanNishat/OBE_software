@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="https://www.thymeleaf.org/">
+  <head> 
+    <meta charset="ISO-8859-1">
+    <title>Login Page</title>
+    <link href="../css/LoginPage.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      <div class="alert alert-primary" align="center" style="color: red" role="alert" th:text="${errorMsg}" th:if="${errorMsg}"></div>
+     <!-- <form method="post"> --> 
+     
+      <form th:action="@{/userLogin}" th:object="${user}" method="post"> <!-- th:object="${user}" -->
+        <div class="txt_field">
+          <input type="text"  th:field="*{userId}"><!-- th:field="*{userId}" -->
+          <span></span>
+          <label>UserId</label>
+        </div>
+        <div class="txt_field">
+          <input type="password"  th:field="*{password}" >  <!-- th:field="*{password}" -->
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        
+        <!-- <button input type="submit" >Login</button> -->
+        <input type="submit" value="Login">
+        
+        
+        <div class="signup_link">
+          	</div>
+        
+        
+      </form>
+    </div>
+
+  </body>
+</html>

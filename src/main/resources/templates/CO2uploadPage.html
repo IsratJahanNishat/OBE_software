@@ -1,0 +1,131 @@
+<!--  
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>File Upload & Data Save Page</h2>
+   	  
+      <form   action ="CO2uploadFile" method = "POST" enctype = "multipart/form-data">
+      <br /> <br />
+         Please select a file to upload : 
+         <input type = "file" name = "file" value = "Browse File" /> <br /> <br />
+         Press here to upload the file :
+         <input type = "submit" value = "upload" /> <br /> <br /> 
+         
+        
+         <div class="alert alert-primary" style="color: green" role="alert" th:text="${message}" th:if="${message}"></div> <br /> <br /> 
+         
+         Do you want to save excel data into database ? <a href="CO2saveData"><b>Yes</b></a> &nbsp &nbsp <a href="/"><b>No</b></a>
+      </form>
+      
+      <form action="calculateCO2">   
+       
+        <input type="submit" value="COcalculates">
+     </form>
+      
+
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+  <meta charset="utf-8">
+  <title>Upload Excel file of student enrollment </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Hemant Vishwakarma">
+  <meta name="description" content="Import Excel File To MySql Database Using php">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+      body{
+            background-color:rgb(198, 226, 216);            
+        }
+     
+     h2{
+          text-align:center;
+          font-family:Helvetica, sans-serif;
+          color:rgb(26, 23, 23);
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 200;
+      } 
+     .container{
+          background-color: wheat;
+          margin:auto;
+      }
+      img{
+            width:30px;
+            height:auto;
+            margin-right:5px;
+        }
+        header{            
+            background-color:rgb(1, 66, 1);        
+            color:white;
+            width:100%;
+        }
+        h1{
+            padding:2px;
+            margin:auto;
+            font-size:25px;
+        }
+        header img, h1{
+            display:inline-block;
+        }
+  </style>
+ </head>
+ <body>
+    <header>
+        <img src="../css/AUST-logo.png"/>
+        <h1>AUST-OBE</h1>
+    </header>    
+    <br><br>
+        <div class="container">
+            <div class="row">
+             <div class="col-md-12 text-center"></div><h2>File Upload And Data Save</h2>
+    <br>
+                <div class="col-md-3 hidden-phone"></div>
+                <div class="col-md-6" id="form-login">
+                    <form class="well" action ="CO2uploadFile" method = "POST" enctype = "multipart/form-data">
+                        <fieldset>
+                            <legend>Upload xls/xlsx/csv-Excel file</legend>
+                            
+	                            <div class="control-group">
+	                                <div class="control-label">
+	                                    <label>Please select a file to upload : </label>
+	                                </div>
+	                                <div class="controls form-group">
+	                                    <br>
+	                                    <input type = "file" name = "file"  class="input-large form-control" required/>
+	                                </div>
+	                            </div>
+	                            
+	                            <div class="control-group">
+	                                <div class="controls">
+	                                <input type = "submit" value = "upload" class="btn btn-success btn-flat btn-lg pull-right button-loading" data-loading-text="Loading..."/>
+	                                </div>
+	                            </div>
+	                          <div class="alert alert-primary" style="color: green" role="alert" th:text="${f2message}" th:if="${f2message}"></div> <br /> <br /> 
+         
+         					Do you want to save excel data into database ? <a href="CO2saveData"><b>Yes</b></a> &nbsp &nbsp <a href="/"><b>No</b></a>
+         					<div class="alert alert-primary" style="color: green" role="alert" th:text="${d2message}" th:if="${d2message}"></div> <br /> <br />
+         					
+         					
+                        </fieldset>
+                    </form>
+                    <form class="well" action="calculateCO2">   
+        				<input type="submit" value="COcalculate">
+        				<div class="alert alert-primary" style="color: green" role="alert" th:text="'Calculated CO2 is '+${co2message}" th:if="${co2message}"></div> <br /> <br />
+    				</form>
+                </div>
+                <div class="col-md-3 hidden-phone"></div>
+            </div>
+            
+        </div>
+ </body>
+</html>

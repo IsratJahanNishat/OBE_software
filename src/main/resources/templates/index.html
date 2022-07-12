@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+<title>Calculate-PO</title>
+    <style>
+        body{
+            background-color:rgb(198, 226, 216);            
+        }
+        img{
+            width:30px;
+            height:auto;
+            margin-right:5px;
+        }
+        header{            
+            background-color:rgb(1, 66, 1);        
+            color:white;
+            width:100%;
+        }
+        h1{
+            padding:2px;
+            margin:0px;
+            font-size:20px;
+        }
+        header img, h1{
+            display:inline-block;
+        }
+        input{
+                       
+            width:50%;
+            margin: 11px;
+            padding:5px;
+            border: 2px solid black;
+            border-radius: 5px;            
+            font-size: 16px;
+            outline:none;
+
+        }
+        form{
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        a{
+            color:white;
+        }
+        .btn{
+            color:white;
+            background: rgb(48, 122, 48);
+            padding:8px 12px;
+            font-size: 14px;
+            border:2px solid white;
+            border-radius: 14px;
+            cursor:pointer;
+        }
+        .btn:hover{
+            background-color: rgb(68, 85, 42);
+            color:rgb(215, 240, 231);
+        }
+        .rounded {
+            border-top: 8px solid rgb(128, 67, 67);
+            border-radius: 5px;
+        }
+       
+    </style>
+</head>
+<body>
+<header>
+       <a href="#home"><img src="../css/AUST-logo.png"/>
+        <h1>AUST-OBE</h1></a>
+    </header>
+<div>
+<div>
+	<h2 align="left" style="margin-left:45px;">Added Courses</h2>
+</div>
+
+
+<div align="left" style="margin-left:45px;">   
+     <h3><a  th:href="@{'/new'}">Add new</a></h3>    
+    </div>
+
+<div class="col-sm-5 panel panel-default">
+                 <div class="panel panel-default" >
+                 <table class="table" >
+  <thead class="thead-dark">
+    <tr>
+       <th>Sl no.</th>
+            <th>Course Name</th>
+            <th>Course No.</th>
+            <th>Department</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Go to Course</th>
+   </tr>
+  </thead>
+  <tbody>
+      <tr  th:each="student : ${liststudent }">
+<td th:text="${student.id}">Sl no</td>
+<td th:text="${student.studentname}">Course Name</td>
+<td th:text="${student.course}">Course No.</td>
+<td th:text="${student.fee}">Department</td>
+<td>
+<a th:href="@{'/edit/' + ${student.id}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{'/delete/' + ${student.id}}">Delete</a>
+</td>     
+<td>
+<a th:href="@{'/gotoCourse'}">Goto Course</a>
+</td> 
+</tr>
+  
+  </tbody>
+</table>
+                    
+                 </div>
+ 
+            </div>
+ 
+
+ 
+</div>
+</body>
+</html>

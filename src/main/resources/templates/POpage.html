@@ -1,0 +1,138 @@
+<!-- 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	hello
+	<form th:action="@{/COcal}" th:object="${thobj}" method="post"> 
+        <div>
+          <input type="number"  th:field="*{i1}">
+          <span></span>
+          <label>CO1</label>
+        </div>
+        <div>
+          <input type="number"  th:field="*{i2}" >  
+          <span></span>
+          <label>CO2</label>
+        </div>
+         <div>
+          <input type="number"  th:field="*{i3}" >  
+          <span></span>
+          <label>CO3</label>
+        </div>
+         <div>
+          <input type="number"  th:field="*{i4}" >  
+          <span></span>
+          <label>CO4</label>
+        </div>
+         <div>
+          <input type="number"  th:field="*{i5}" >  
+          <span></span>
+          <label>CO5</label>
+        </div>
+        <input type="submit" value="CalculatePO"> 
+        
+      </form>
+
+</body>
+</html>
+
+ -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate-PO</title>
+    <style>
+        body{
+            background-color:rgb(198, 226, 216);            
+        }
+        img{
+            width:30px;
+            height:auto;
+            margin-right:5px;
+        }
+        header{            
+            background-color:rgb(1, 66, 1);        
+            color:white;
+            width:100%;
+        }
+        h1{
+            padding:2px;
+            margin:0px;
+            font-size:20px;
+        }
+        header img, h1{
+            display:inline-block;
+        }
+        input{
+                       
+            width:50%;
+            margin: 11px;
+            padding:5px;
+            border: 2px solid black;
+            border-radius: 5px;            
+            font-size: 16px;
+            outline:none;
+
+        }
+        form{
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        a{
+            color:white;
+        }
+        .btn{
+            color:white;
+            background: rgb(48, 122, 48);
+            padding:8px 12px;
+            font-size: 14px;
+            border:2px solid white;
+            border-radius: 14px;
+            cursor:pointer;
+        }
+        .btn:hover{
+            background-color: rgb(68, 85, 42);
+            color:rgb(215, 240, 231);
+        }
+        .rounded {
+            border-top: 8px solid rgb(128, 67, 67);
+            border-radius: 5px;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+       <a href="#home"><img src="../css/AUST-logo.png"/>
+        <h1>AUST-OBE</h1></a>
+    </header>
+    <h2>Calculation Of PO</h2>
+    <div>
+        <p></p>
+        <form class="calculate-co-po" form th:action="@{/COcal}" th:object="${thobj}" method="post" >
+            <h3>Weight Of CO's</h3>            
+            <input type="number" name="co1" id="co1" placeholder="CO-1 weight" th:field="*{i1}"/>
+            <input type="number" name="co2" id="co2" placeholder="CO-2 weight" th:field="*{i2}"/>
+            <input type="number" name="co3" id="co3" placeholder="CO-3 weight" th:field="*{i3}"/>
+            <input type="number" name="co4" id="co4" placeholder="CO-4 weight" th:field="*{i4}"/>
+            <input type="number" name="co4" id="co5" placeholder="CO-5 weight" th:field="*{i5}"/>
+            <button class="btn">Calculate PO</button> <br /> <br />
+            <div class="alert alert-primary" style="color: green" role="alert" th:text="'Calculated PO is '+${POmessage}" th:if="${POmessage}"></div> <br /> <br />
+
+        </form>       
+            
+        
+    </div>
+</body>
+</html>
